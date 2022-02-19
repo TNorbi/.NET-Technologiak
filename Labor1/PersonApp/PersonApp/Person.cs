@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace PersonApp
 {
-    internal class Person
+    public class Person
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public string FullName { get; }
+        public string FullName { get; private set; }
+
+        public void makeFullName()
+        {
+            FullName = $"{FirstName} {LastName}";
+        }
     }
 }

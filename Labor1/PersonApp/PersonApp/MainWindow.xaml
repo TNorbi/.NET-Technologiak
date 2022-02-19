@@ -31,6 +31,23 @@
         <TextBox x:Name="firstName" Grid.ColumnSpan="4" Grid.Column="1" HorizontalAlignment="Left" Margin="135,84,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="lastName" Grid.ColumnSpan="4" Grid.Column="1" HorizontalAlignment="Left" Margin="135,124,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="18"/>
         <Button Content="Run me" Grid.Column="1" HorizontalAlignment="Center" Margin="0,216,0,0" Grid.Row="6" VerticalAlignment="Top" Width="196" Height="33" FontSize="18" Click="Button_Click"/>
-        <ComboBox x:Name="personsComboBox" Grid.Column="1" HorizontalAlignment="Left" Margin="25,175,0,0" Grid.Row="6" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="personsComboBox" Grid.Column="1" HorizontalAlignment="Center" Margin="0,175,0,0" Grid.Row="6" VerticalAlignment="Top" Width="196">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="D:\EGYETEMI-DOLGOK\HARMAD_EV\FELEV2\C# .NET technologiak\Laborok\Labor1\avatar.jpg" Height="20" Width="20" />
+                        <TextBlock Text="{Binding FullName}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ScrollViewer Grid.Row="1" Grid.Column="4" Grid.RowSpan="6">
+            <StackPanel Orientation="Vertical">
+                <Image MaxHeight="200" MaxWidth="200" Source="D:\EGYETEMI-DOLGOK\HARMAD_EV\FELEV2\C# .NET technologiak\Laborok\Labor1\avatar.jpg" />
+                <Image MaxHeight="200" MaxWidth="200" Source="D:\EGYETEMI-DOLGOK\HARMAD_EV\FELEV2\C# .NET technologiak\Laborok\Labor1\avatar.jpg" />
+                <Image MaxHeight="200" MaxWidth="200" Source="D:\EGYETEMI-DOLGOK\HARMAD_EV\FELEV2\C# .NET technologiak\Laborok\Labor1\avatar.jpg" />
+                <Image MaxHeight="200" MaxWidth="200" Source="D:\EGYETEMI-DOLGOK\HARMAD_EV\FELEV2\C# .NET technologiak\Laborok\Labor1\avatar.jpg" />
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>
