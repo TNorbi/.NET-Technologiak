@@ -20,3 +20,4 @@ D:\EGYETEMI-DOLGOK\HARMAD_EV\FELEV2\C# .NET technologiak\Laborok\Labor1\DrillApp
 D:\EGYETEMI-DOLGOK\HARMAD_EV\FELEV2\C# .NET technologiak\Laborok\Labor1\DrillApp\DrillApp\obj\Debug\net5.0-windows\ref\DrillApp.dll
 D:\EGYETEMI-DOLGOK\HARMAD_EV\FELEV2\C# .NET technologiak\Laborok\Labor1\DrillApp\DrillApp\obj\Debug\net5.0-windows\DrillApp.pdb
 D:\EGYETEMI-DOLGOK\HARMAD_EV\FELEV2\C# .NET technologiak\Laborok\Labor1\DrillApp\DrillApp\obj\Debug\net5.0-windows\DrillApp.genruntimeconfig.cache
+D:\EGYETEMI-DOLGOK\HARMAD_EV\FELEV2\C# .NET technologiak\Laborok\Labor1\DrillApp\DrillApp\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs

@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:DrillApp"
         mc:Ignorable="d"
         Title="Drill" Height="822" Width="474">
+    <Window.DataContext>
+        <local:Drill/>
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />
@@ -29,38 +32,38 @@
         <Button x:Name="resetButton" Content="Reset" Grid.Column="4" HorizontalAlignment="Left" Margin="237,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="176" RenderTransformOrigin="0.502,0.162" Click="resetButton_Click"/>
         <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="24,53,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Text="Basic Properties" FontWeight="Bold"/>
         <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="24,83,0,0" Grid.Row="6" Text="Manufacturer" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="manufacturerTextBox" Grid.Column="4" HorizontalAlignment="Left" Margin="24,99,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="389"/>
+        <TextBox x:Name="manufacturerTextBox" Text="{Binding Manufacturer}" Grid.Column="4" HorizontalAlignment="Left" Margin="24,99,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="389"/>
         <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="24,122,0,0" Grid.Row="6" Text="Package Dimensions" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="packageDimensionTxtBox" Grid.Column="4" HorizontalAlignment="Left" Margin="24,138,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="264" Background="LightGray"/>
+        <TextBox x:Name="packageDimensionTxtBox" Text="{Binding PackageDimensions}" Grid.Column="4" HorizontalAlignment="Left" Margin="24,138,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="264" Background="LightGray"/>
         <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="293,122,0,0" Grid.Row="6" Text="Item Weight" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="itemWeightTxtBox" Grid.Column="4" HorizontalAlignment="Left" Margin="293,138,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="LightGray"/>
+        <TextBox x:Name="itemWeightTxtBox" Text="{Binding ItemWeigth}" Grid.Column="4" HorizontalAlignment="Left" Margin="293,138,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="LightGray"/>
         <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="24,161,0,0" Grid.Row="6" Text="Part Number" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="partNumberTxtBox" Grid.Column="4" HorizontalAlignment="Left" Margin="24,177,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="389" Background="LightGray"/>
+        <TextBox x:Name="partNumberTxtBox" Text="{Binding PartNumber}" Grid.Column="4" HorizontalAlignment="Left" Margin="24,177,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="389" Background="LightGray"/>
         <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="24,209,0,0" Grid.Row="6" Text="Raw Material" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"/>
         <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="24,237,0,0" Grid.Row="6" Text="Material" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <ComboBox x:Name="materialComboBox" Grid.Column="4" HorizontalAlignment="Left" Margin="24,253,0,0" Grid.Row="6" VerticalAlignment="Top" Width="389"/>
+        <ComboBox x:Name="materialComboBox" ItemsSource="{Binding Materials}" SelectedValue="{Binding Material}"  Grid.Column="4" HorizontalAlignment="Left" Margin="24,253,0,0" Grid.Row="6" VerticalAlignment="Top" Width="389"/>
         <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="24,294,0,0" Grid.Row="6" Text="Manufacturing Info" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"/>
         <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="24,325,0,0" Grid.Row="6" Text="Usage" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <CheckBox x:Name="concreteCheckBox" Content="Concrete" Grid.Column="4" HorizontalAlignment="Left" Margin="24,351,0,0" Grid.Row="6" VerticalAlignment="Top"/>
-        <CheckBox x:Name="woodCheckBox" Content="Wood" Grid.Column="4" HorizontalAlignment="Left" Margin="24,366,0,0" Grid.Row="6" VerticalAlignment="Top"/>
-        <CheckBox x:Name="metalCheckBox" Content="Metal" Grid.Column="4" HorizontalAlignment="Left" Margin="24,381,0,0" Grid.Row="6" VerticalAlignment="Top"/>
-        <CheckBox x:Name="hardBrickCheckBox" Content="Hard Brick" Grid.Column="4" HorizontalAlignment="Left" Margin="237,351,0,0" Grid.Row="6" VerticalAlignment="Top"/>
-        <CheckBox x:Name="hardMaterialCheckBox" Content="Hard Material" Grid.Column="4" HorizontalAlignment="Left" Margin="237,366,0,0" Grid.Row="6" VerticalAlignment="Top"/>
-        <CheckBox x:Name="screwDriverCheckBox" Content="Screwdriver" Grid.Column="4" HorizontalAlignment="Left" Margin="237,381,0,0" Grid.Row="6" VerticalAlignment="Top"/>
+        <CheckBox x:Name="concreteCheckBox" IsChecked="{Binding Usage.Concrete}" Content="Concrete" Grid.Column="4" HorizontalAlignment="Left" Margin="24,351,0,0" Grid.Row="6" VerticalAlignment="Top"/>
+        <CheckBox x:Name="woodCheckBox" IsChecked="{Binding Usage.Wood}" Content="Wood" Grid.Column="4" HorizontalAlignment="Left" Margin="24,366,0,0" Grid.Row="6" VerticalAlignment="Top"/>
+        <CheckBox x:Name="metalCheckBox" IsChecked="{Binding Usage.Metal}" Content="Metal" Grid.Column="4" HorizontalAlignment="Left" Margin="24,381,0,0" Grid.Row="6" VerticalAlignment="Top"/>
+        <CheckBox x:Name="hardBrickCheckBox" IsChecked="{Binding Usage.HardBrick}" Content="Hard Brick" Grid.Column="4" HorizontalAlignment="Left" Margin="237,351,0,0" Grid.Row="6" VerticalAlignment="Top"/>
+        <CheckBox x:Name="hardMaterialCheckBox" IsChecked="{Binding Usage.HardMaterial}" Content="Hard Material" Grid.Column="4" HorizontalAlignment="Left" Margin="237,366,0,0" Grid.Row="6" VerticalAlignment="Top"/>
+        <CheckBox x:Name="screwDriverCheckBox" IsChecked="{Binding Usage.Screwdriver}" Content="Screwdriver" Grid.Column="4" HorizontalAlignment="Left" Margin="237,381,0,0" Grid.Row="6" VerticalAlignment="Top"/>
         <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="24,410,0,0" Grid.Row="6" Text="Size" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="sizeTxtBox" Grid.Column="4" HorizontalAlignment="Left" Margin="24,426,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="389"/>
+        <TextBox x:Name="sizeTxtBox" Text="{Binding Size}" Grid.Column="4" HorizontalAlignment="Left" Margin="24,426,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="389"/>
         <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="24,449,0,0" Grid.Row="6" Text="Power Source" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="powerSourceTxtBox" Grid.Column="4" HorizontalAlignment="Left" Margin="24,465,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="389" Height="25" Background="LightGray"/>
+        <TextBox x:Name="powerSourceTxtBox" Text="{Binding PowerSource}" Grid.Column="4" HorizontalAlignment="Left" Margin="24,465,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="389" Height="25" Background="LightGray"/>
         <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="24,495,0,0" Grid.Row="6" Text="Include Components" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="includeComponentsTxtBox" Grid.Column="4" HorizontalAlignment="Left" Margin="24,511,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="389"/>
-        <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="24,534,0,0" Grid.Row="6" Text="Speed" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <ComboBox x:Name="speedComboBox" Grid.Column="4" HorizontalAlignment="Left" Margin="24,550,0,0" Grid.Row="6" VerticalAlignment="Top" Width="389"/>
-        <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="24,577,0,0" Grid.Row="6" Text="Torque" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="torqueTxtBox" Grid.Column="4" HorizontalAlignment="Left" Margin="24,593,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="389"/>
-        <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="24,616,0,0" Grid.Row="6" Text="Installation Method" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="installationMethodTxtBox" Grid.Column="4" HorizontalAlignment="Left" Margin="24,632,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="389"/>
+        <ListView x:Name="includeComponentsTxtBox" ItemsSource="{Binding IncludeComponents}" Grid.Column="4" HorizontalAlignment="Left" Margin="24,511,0,0" Grid.Row="6"  VerticalAlignment="Top" Width="389"/>
+        <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="24,520,0,0" Grid.Row="6" Text="Speed" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <ComboBox x:Name="speedComboBox" ItemsSource="{Binding Speeds}" SelectedValue="{Binding Speed}" Grid.Column="4" HorizontalAlignment="Left" Margin="24,536,0,0" Grid.Row="6" VerticalAlignment="Top" Width="390"/>
+        <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="24,563,0,0" Grid.Row="6" Text="Torque" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="torqueTxtBox" Text="{Binding Torque}" Grid.Column="4" HorizontalAlignment="Left" Margin="24,579,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="389"/>
+        <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="24,602,0,0" Grid.Row="6" Text="Installation Method" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="installationMethodTxtBox" Text="{Binding InstallationMethod}" Grid.Column="4" HorizontalAlignment="Left" Margin="24,618,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="389"/>
         <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="24,670,0,0" Grid.Row="6" Text="Additional Information" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"/>
         <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="24,704,0,0" Grid.Row="6" Text="Note" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="noteTxtBox" Grid.Column="4" HorizontalAlignment="Left" Margin="24,720,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="389"/>
+        <TextBox x:Name="noteTxtBox" Text="{Binding Note}" Grid.Column="4" HorizontalAlignment="Left" Margin="24,720,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="389"/>
     </Grid>
 </Window>
