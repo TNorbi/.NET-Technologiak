@@ -1,5 +1,5 @@
 ﻿ProductApp
-1.0.0.0
+
 
 winexe
 C#
@@ -12,7 +12,7 @@ TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 D:\EGYETEMI-DOLGOK\HARMAD_EV\FELEV2\C# .NET technologiak\Laborok\Labor2\ProductApp\ProductApp\App.xaml
 32085409993
 
-71772889943
+5-503197816
 194-1895322998
 MainWindow.xaml;Resources\CellTemplate.xaml;Resources\HeaderTemplate.xaml;
 

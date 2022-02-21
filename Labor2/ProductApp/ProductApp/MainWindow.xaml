@@ -5,31 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProductApp"
         mc:Ignorable="d"
-        Title="ProductApp" Height="450" Width="800">
+        Title="ProductApp" Height="450" Width="800"
+        SizeToContent="Width">
+    
     <Grid>
         <ListView x:Name="ProductListView" ItemsSource="{Binding}" Margin="5">
-            <GridView>
-                <GridViewColumn>
-                    HeaderTemplate="{StaticResource ProductIDColHeader}"
-                    CellTemplate="{StaticResource ProductIDCellTemplate}"
-                </GridViewColumn>
-                
-                <GridViewColumn>
-                    HeaderTemplate="{StaticResource ProductNameColHeader}"
-                    CellTemplate="{StaticResource ProductNameCellTemplate}"
-                </GridViewColumn>
-                
-                <GridViewColumn>
-                    HeaderTemplate="{StaticResource PackageSizeColHeader}"
-                    CellTemplate="{StaticResource PackageSizeCellTemplate}"
-                </GridViewColumn>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn HeaderTemplate="{StaticResource ProductIDColHeader}" 
+                                    CellTemplate="{StaticResource ProductIDCellTemplate}"/>
 
-                <GridViewColumn>
-                    HeaderTemplate="{StaticResource QuantityColHeader}"
-                    CellTemplate="{StaticResource QuantityCellTemplate}"
-                </GridViewColumn>
 
-            </GridView>
+                    <GridViewColumn HeaderTemplate="{StaticResource ProductNameColHeader}" 
+                                    CellTemplate="{StaticResource ProductNameCellTemplate}" />
+
+
+                    <GridViewColumn HeaderTemplate="{StaticResource PackageSizeColHeader}" 
+                                    CellTemplate="{StaticResource PackageSizeCellTemplate}"/>
+
+
+                    <GridViewColumn HeaderTemplate="{StaticResource QuantityColHeader}"
+                                    CellTemplate="{StaticResource QuantityCellTemplate}"/>
+
+
+                </GridView>
+            </ListView.View>
         </ListView>
     </Grid>
 </Window>

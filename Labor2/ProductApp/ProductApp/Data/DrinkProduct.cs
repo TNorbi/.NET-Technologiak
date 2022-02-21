@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProductApp.Data
 {
-    enum MaterialType
+    public enum MaterialType
     {
         Granules,
         Leaf,
@@ -16,7 +16,7 @@ namespace ProductApp.Data
         Other
     }
 
-    class DrinkProduct
+    public class DrinkProduct
     {
         public int AnnualSales { get; set; }
         public MaterialType Material { get; set; } = new MaterialType();

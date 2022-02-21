@@ -1,0 +1,48 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <DataTemplate x:Key="ProductIDColHeader">
+        <Border BorderThickness="3" BorderBrush="SteelBlue">
+            <TextBlock FontFamily="Calibri"
+                   Background="LightBlue"
+                   Margin="2"
+                   FontWeight="Bold"
+                   FontSize="16"
+                   Text="Product ID"/>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ProductNameColHeader">
+        <Border BorderThickness="3" BorderBrush="SteelBlue">
+            <TextBlock FontFamily="Calibri"
+                   Background="LightBlue"
+                   Margin="2"
+                   FontWeight="Bold"
+                   FontSize="16"
+                   Text="Product Name"/>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="PackageSizeColHeader">
+        <Border BorderThickness="3" BorderBrush="SteelBlue">
+            <TextBlock FontFamily="Calibri"
+                   Background="LightBlue"
+                   Margin="2"
+                   FontWeight="Bold"
+                   FontSize="16"
+                   Text="Pack Size"/>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="QuantityColHeader">
+        <Border BorderThickness="3" BorderBrush="SteelBlue">
+            <TextBlock FontFamily="Calibri"
+                   Background="LightBlue"
+                   Margin="2"
+                   FontWeight="Bold"
+                   FontSize="16"
+                   Text="Quantity"/>
+        </Border>
+    </DataTemplate>
+    
+</ResourceDictionary>

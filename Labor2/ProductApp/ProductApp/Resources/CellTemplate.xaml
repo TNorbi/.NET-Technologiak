@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:helper="clr-namespace:ProductApp.Helper">
+    
+    <helper:IntegerToBrushConverter x:Key="QuantityConverter"/>
+
+    <DataTemplate x:Key="ProductIDCellTemplate">
+        <TextBlock Foreground="MediumBlue"
+                   FontFamily="Calibri"
+                   FontSize="14"
+                   Text="{Binding Path=ProductID}"/>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ProductNameCellTemplate">
+        <TextBlock Foreground="DarkBlue"
+                   FontFamily="Calibri"
+                   FontWeight="Bold"
+                   FontSize="14"
+                   Text="{Binding Path=ProductName}"/>
+    </DataTemplate>
+
+    <DataTemplate x:Key="PackageSizeCellTemplate">
+        <TextBlock Foreground="MediumBlue"
+                   FontFamily="Calibri"
+                   FontSize="14"
+                   Text="{Binding Path=PackageType}"/>
+    </DataTemplate>
+
+    <DataTemplate x:Key="QuantityCellTemplate">
+        <TextBlock FontFamily="Calibri"
+                   FontSize="14"
+                   Foreground="{Binding Path=Quantity,Converter={StaticResource QuantityConverter}}"
+                   Text="{Binding Path=Quantity}"/>
+    </DataTemplate>
+</ResourceDictionary>

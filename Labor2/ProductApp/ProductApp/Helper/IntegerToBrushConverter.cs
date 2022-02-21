@@ -1,7 +1,7 @@
 ﻿using ProductApp.Data;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
+using System.Windows.Media;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -16,15 +16,16 @@ namespace ProductApp.Helper
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            DrinkProduct product = (DrinkProduct)value;
+     
+            int Quantity = (int)value;
 
-            if(product.Quantity < 10000)
+            if(Quantity < 10000)
             {
                 //itt ki kell szinezzem a Quantity int erteket pirosra
-                return new SolidBrush(Color.Red);
+                return Brushes.Red;
             }
 
-            return new SolidBrush(Color.Blue);
+            return Brushes.Blue;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
