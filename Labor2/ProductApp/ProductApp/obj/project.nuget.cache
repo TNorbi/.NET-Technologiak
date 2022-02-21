@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "YLS3y1ZeV0WkXu/CyY4uhVNTSK7hTf9pW3NzXG5rkrBPuOE61zsXwjOu1D14IqnwC6VxTGMpUoWaD/LnrV6ogA==",
+  "success": true,
+  "projectFilePath": "D:\\EGYETEMI-DOLGOK\\HARMAD_EV\\FELEV2\\C# .NET technologiak\\Laborok\\Labor2\\ProductApp\\ProductApp\\ProductApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gamep\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\gamep\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
