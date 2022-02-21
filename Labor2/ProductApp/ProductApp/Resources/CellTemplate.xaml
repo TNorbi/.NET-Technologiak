@@ -32,4 +32,19 @@
                    Foreground="{Binding Path=Quantity,Converter={StaticResource QuantityConverter}}"
                    Text="{Binding Path=Quantity}"/>
     </DataTemplate>
+
+    <DataTemplate x:Key="MaterialCellTemplate">
+        <TextBlock Foreground="MediumBlue"
+                   FontFamily="Calibri"
+                   FontSize="14"
+                   Text="{Binding Path=Material}"/>
+    </DataTemplate>
+
+    <DataTemplate x:Key="AnnualCellTemplate">
+        <TextBlock Foreground="MediumBlue"
+                   FontFamily="Calibri"
+                   FontSize="14"
+                   Text="{Binding Path=AnnualSales}"/>
+    </DataTemplate>
+    
 </ResourceDictionary>

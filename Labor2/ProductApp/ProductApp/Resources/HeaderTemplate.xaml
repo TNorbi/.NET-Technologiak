@@ -44,5 +44,27 @@
                    Text="Quantity"/>
         </Border>
     </DataTemplate>
+
+    <DataTemplate x:Key="MaterialColHeader">
+        <Border BorderThickness="3" BorderBrush="SteelBlue">
+            <TextBlock FontFamily="Calibri"
+                   Background="LightBlue"
+                   Margin="2"
+                   FontWeight="Bold"
+                   FontSize="16"
+                   Text="Material"/>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="AnunualColHeader">
+        <Border BorderThickness="3" BorderBrush="SteelBlue">
+            <TextBlock FontFamily="Calibri"
+                   Background="LightBlue"
+                   Margin="2"
+                   FontWeight="Bold"
+                   FontSize="16"
+                   Text="Annual Sales"/>
+        </Border>
+    </DataTemplate>
     
 </ResourceDictionary>

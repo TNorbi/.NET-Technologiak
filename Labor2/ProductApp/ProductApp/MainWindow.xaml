@@ -28,6 +28,12 @@
                                     CellTemplate="{StaticResource QuantityCellTemplate}"/>
 
 
+                    <GridViewColumn HeaderTemplate="{StaticResource MaterialColHeader}"
+                                    CellTemplate="{StaticResource MaterialCellTemplate}"/>
+
+                    <GridViewColumn HeaderTemplate="{StaticResource AnunualColHeader}"
+                                    CellTemplate="{StaticResource AnnualCellTemplate}"/>
+
                 </GridView>
             </ListView.View>
         </ListView>
