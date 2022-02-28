@@ -27,10 +27,11 @@ namespace UserApp
             InitializeComponent();
         }
 
-        private void btnChangeName_Click(object sender, RoutedEventArgs e)
+        private void btnChangeUserDatas_Click(object sender, RoutedEventArgs e)
         {
             viewModel.ChangeName(txtNewName.Text);
+            viewModel.ChangeAge(int.Parse(txtNewAge.Text));
+            viewModel.ChangeGender(txtNewGender.Text);
         }
-
     }
 }

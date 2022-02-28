@@ -46,16 +46,37 @@
         </ListView>
 
         <Grid Grid.Row="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            
-            <TextBox x:Name="txtUserName" />
 
-            <Button x:Name="btnAddNewUser"
+            <TextBlock Grid.Row="0" Text="User Name"/>
+            <TextBox Grid.Row="1" x:Name="txtUserName"/>
+
+            <TextBlock Grid.Row="2" Text="Age" Margin="0,5,0,0"/>
+            <TextBox Grid.Row="3" x:Name="txtAge"/>
+
+            <TextBlock Text="Gender"
+                       Grid.Row="4"
+                       Margin="0,5,0,0"/>
+            <TextBox x:Name="txtGender"
+                     Grid.Row="5"/>
+
+            <Button Grid.Row="6" x:Name="btnAddNewUser"
                     Content="Új felhasználó"
-                    Grid.Column="1" 
+                    Grid.Column="0"
+                    Margin="0,8,0,0"
                     Click="btnAddNewUser_Click"/>   
         </Grid>
     </Grid>

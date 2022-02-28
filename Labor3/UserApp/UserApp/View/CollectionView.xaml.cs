@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UserApp.Model;
 using UserApp.ViewModel;
 
 namespace UserApp.View
@@ -30,14 +31,21 @@ namespace UserApp.View
 
         private void btnAddNewUser_Click(object sender, RoutedEventArgs e)
         {
-            viewModel.Users.Add(new Model.User() { Name = txtUserName.Text });
+            viewModel.Users.Add(new Model.User() { Name = txtUserName.Text,Age = int.Parse(txtAge.Text),Gender = txtGender.Text});
             txtUserName.Text = string.Empty;
+            txtAge.Text = string.Empty;
+            txtGender.Text = string.Empty;
         }
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var selectedUser = listView.SelectedItem;
-            
+            User selectedUser = (User)listView.SelectedItem;
+            MainViewModel mainViewModel = new MainViewModel();
+            mainViewModel.User.Name = selectedUser.Name;
+            mainViewModel.User.Age = selectedUser.Age;
+            mainViewModel.User.Gender = selectedUser.Gender;
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.mainStackPanel.DataContext = mainViewModel.User;
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace UserApp.Model
 {
-    class User : INotifyPropertyChanged
+    public class User : INotifyPropertyChanged
     {
         private string name;
         private int age;
@@ -23,11 +23,17 @@ namespace UserApp.Model
         
         public int Age {
             get { return age; }
-            set { age = value; } 
+            set { 
+                age = value;
+                OnPropertyChanged("Age");
+            } 
         }
         public string Gender {
             get { return gender; }
-            set { gender = value; } 
+            set { 
+                gender = value;
+                OnPropertyChanged("Gender");
+            } 
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

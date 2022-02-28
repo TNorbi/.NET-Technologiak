@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:UserApp"
         xmlns:vw="clr-namespace:UserApp.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="auto" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -16,20 +16,20 @@
         
         <vw:CollectionView Grid.Row="0"/>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="1">
-            <TextBlock Text="{Binding Name}"
+        <StackPanel x:Name="mainStackPanel" Orientation="Vertical" Grid.Row="1" DataContext="{Binding MainViewModel.User}">
+            <TextBlock Text="Cortana"
                    Foreground="Black"
                    FontSize="28"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center" />
 
-            <TextBlock Text="{Binding Age}"
+            <TextBlock Text="18"
                    Foreground="Black"
                    FontSize="28"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center" />
             
-            <TextBlock Text="{Binding Gender}"
+            <TextBlock Text="Female"
                    Foreground="Black"
                    FontSize="28"
                    HorizontalAlignment="Center"
@@ -38,12 +38,23 @@
         
 
         <StackPanel Orientation="Vertical" Grid.Row="2">
+            <TextBlock Text="New Name"/>
             <TextBox x:Name="txtNewName"
                      Margin="10"/>
-            <Button x:Name="btnChangeName"
-                    Content="Név módositása"
+            
+            <TextBlock Text="New Age"/>
+            <TextBox x:Name="txtNewAge"
+                     Margin="10"/>
+            
+            <TextBlock Text="New Gender"/>
+            <TextBox x:Name="txtNewGender"
+                     Margin="10"/>
+            
+            <Button x:Name="btnChangeUserDatas"
+                    Content="Személy módositása"
                     Margin="10" HorizontalAlignment="Center" 
-                    Click="btnChangeName_Click"/>
+                    Click="btnChangeUserDatas_Click"/>
+            
         </StackPanel>
     </Grid>
 </Window>

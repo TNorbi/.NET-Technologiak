@@ -7,8 +7,8 @@ using UserApp.Model;
 
 namespace UserApp.ViewModel
 {
-    class MainViewModel
-    {
+    public class MainViewModel
+    { 
         public User User { get; set; }
 
         public MainViewModel()
@@ -19,6 +19,16 @@ namespace UserApp.ViewModel
         public void ChangeName(string newName)
         {
             User.Name = newName;
+        }
+
+        public void ChangeAge(int newAge)
+        {
+            User.Age = newAge;
+        }
+
+        public void ChangeGender(string newGender)
+        {
+            User.Gender = newGender;
         }
     }
 }
