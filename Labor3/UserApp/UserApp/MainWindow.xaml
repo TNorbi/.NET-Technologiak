@@ -17,19 +17,19 @@
         <vw:CollectionView Grid.Row="0"/>
 
         <StackPanel x:Name="mainStackPanel" Orientation="Vertical" Grid.Row="1" DataContext="{Binding MainViewModel.User}">
-            <TextBlock Text="Cortana"
+            <TextBlock Text="{Binding Name}"
                    Foreground="Black"
                    FontSize="28"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center" />
 
-            <TextBlock Text="18"
+            <TextBlock Text="{Binding Age}"
                    Foreground="Black"
                    FontSize="28"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center" />
             
-            <TextBlock Text="Female"
+            <TextBlock Text="{Binding Gender}"
                    Foreground="Black"
                    FontSize="28"
                    HorizontalAlignment="Center"

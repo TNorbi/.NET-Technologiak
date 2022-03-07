@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UserApp.Model;
 using UserApp.ViewModel;
 
 namespace UserApp
@@ -22,16 +23,20 @@ namespace UserApp
     public partial class MainWindow : Window
     {
         private MainViewModel viewModel = new MainViewModel();
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
+       
         private void btnChangeUserDatas_Click(object sender, RoutedEventArgs e)
         {
             viewModel.ChangeName(txtNewName.Text);
             viewModel.ChangeAge(int.Parse(txtNewAge.Text));
             viewModel.ChangeGender(txtNewGender.Text);
         }
+        
+
     }
 }

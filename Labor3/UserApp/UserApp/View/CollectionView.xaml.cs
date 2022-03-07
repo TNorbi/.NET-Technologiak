@@ -23,6 +23,13 @@ namespace UserApp.View
     public partial class CollectionView : UserControl
     {
         CollectionViewModel viewModel = new CollectionViewModel();
+        private string selectedUserName;
+        public string SelectedUserName
+        {
+            get { return selectedUserName; }
+            set { selectedUserName = value; }
+        }
+
         public CollectionView()
         {
             InitializeComponent();
