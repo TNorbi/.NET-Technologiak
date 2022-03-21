@@ -1,5 +1,8 @@
+using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 
 public class AlgorithmRepository : IAlgorithmRepository
 {
@@ -27,23 +30,41 @@ public class AlgorithmRepository : IAlgorithmRepository
         _context.SaveChanges();
     }
 
-    /*public void AddAlgorithm(int id, string name, string description, Enums.AlgorithmType type, string icon, string url, string algorithmNickname, bool? IsPublished, DateTime creationDate)
+
+
+    public async Task<Algorithm> GetSpecificAlgorithm(int id)
     {
-        Algorithm algorithm = new Algorithm()
+        return await _context.Algorithms.FindAsync(id);
+    }
+
+    public async Task<List<Algorithm>> GetAllAlgorithms()
+    {
+        Algorithm algorithm = new Algorithm();
+        var result = await _context.Algorithms.ToListAsync();
+
+        return result;
+    }
+
+    public async Task<Algorithm> UpdateAlgorithm(int id, AlgorithmViewModel viewModel)
+    {
+        var chosenAlgorithm = await _context.Algorithms.FindAsync(id);
+
+        if(chosenAlgorithm != null)
         {
-            Id 
+            chosenAlgorithm.Name = viewModel.Name;
+            chosenAlgorithm.Description = viewModel.Description;
+            chosenAlgorithm.Type = viewModel.Type;
+            chosenAlgorithm.Icon = viewModel.Icon;
+            chosenAlgorithm.Url = viewModel.Url;
+            chosenAlgorithm.AlgorithmNickname = viewModel.AlgorithmNickname;
+
+            _context.Algorithms.Update(chosenAlgorithm);
+
+            await _context.SaveChangesAsync();
+
+            return chosenAlgorithm;
         }
 
-        algorithm.Id = id;
-        algorithm.Name = name;
-        algorithm.Description = description;
-        algorithm.Type = type;
-        algorithm.Icon = icon;
-        algorithm.Url = url;
-        algorithm.AlgorithmNickname = algorithmNickname;
-        algorithm.IsPublished = IsPublished;
-        algorithm.CreationDate = creationDate;
-
-        _context.Algorithms.Add(algorithm);
-    }*/
+        return null;
+    }
 }
