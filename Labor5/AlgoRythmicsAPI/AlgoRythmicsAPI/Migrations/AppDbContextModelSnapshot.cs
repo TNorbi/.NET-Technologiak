@@ -28,7 +28,7 @@ namespace AlgoRythmicsAPI.Migrations
                     b.Property<string>("AlgorithmNickname")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreationTime")
+                    b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
@@ -37,7 +37,7 @@ namespace AlgoRythmicsAPI.Migrations
                     b.Property<string>("Icon")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsPublished")
+                    b.Property<bool?>("IsPublished")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")

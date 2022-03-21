@@ -35,6 +35,9 @@ namespace AlgoRythmicsAPI
             });
 
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
+
+            services.AddScoped<IAlgorithmRepository, AlgorithmRepository>();
+            services.AddScoped<IAlgorithmService, AlgorithmService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +49,8 @@ namespace AlgoRythmicsAPI
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AlgoRythmicsAPI v1"));
             }
+
+            AppDbInitializer.Seed(app);
 
             app.UseHttpsRedirection();
 
