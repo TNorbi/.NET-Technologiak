@@ -65,5 +65,18 @@ namespace AlgoRythmicsAPI.Controllers
 
             return Problem(detail: "Update unsuccessfull", statusCode: 301);
         }
+
+        [HttpDelete("delete-algorithm-by-id/{algorithmId}")]
+        public async Task<IActionResult> DeleteAlgorithm(int algorithmId)
+        {
+            var result = await _service.DeleteAlgorithm(algorithmId);
+
+            if(result != null)
+            {
+                return Ok("Delete successfull");
+            }
+
+            return Problem(statusCode: 301, detail: "Delete unsuccessfull.Algorithm with given id doesn't exist.");
+        }
     }
 }

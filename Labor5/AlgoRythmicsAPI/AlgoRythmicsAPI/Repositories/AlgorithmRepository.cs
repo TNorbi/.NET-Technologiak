@@ -67,4 +67,20 @@ public class AlgorithmRepository : IAlgorithmRepository
 
         return null;
     }
+
+    public async Task<Algorithm> DeleteAlgorithm(int id)
+    {
+        var result = await _context.Algorithms.FindAsync(id);
+
+        if(result == null)
+        {
+            return null;
+        }
+
+        _context.Algorithms.Remove(result);
+
+        await _context.SaveChangesAsync();
+
+        return result;
+    }
 }

@@ -9,5 +9,7 @@ public interface IAlgorithmService {
     public Task<List<Algorithm>> GetAllAlgorithms();
 
     public Task<Algorithm> UpdateAlgorithm(int id, AlgorithmViewModel viewModel);
+
+    public Task<Algorithm> DeleteAlgorithm(int id);
 }
 

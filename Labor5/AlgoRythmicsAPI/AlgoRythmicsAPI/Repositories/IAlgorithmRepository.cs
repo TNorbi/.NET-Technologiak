@@ -11,6 +11,7 @@ public interface IAlgorithmRepository
     public Task<List<Algorithm>> GetAllAlgorithms();
 
     public Task<Algorithm> UpdateAlgorithm(int id,AlgorithmViewModel viewModel);
-    //public void DeleteAlgorithm();
+    
+    public Task<Algorithm> DeleteAlgorithm(int id);
 
 }

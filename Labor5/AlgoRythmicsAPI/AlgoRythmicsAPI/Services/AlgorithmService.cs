@@ -16,6 +16,18 @@ public class AlgorithmService : IAlgorithmService
         _repo.AddAlgorithm(viewModel);
     }
 
+    public async Task<Algorithm> DeleteAlgorithm(int id)
+    {
+        var result = await _repo.DeleteAlgorithm(id);
+
+        if(result == null)
+        {
+            return null;
+        }
+
+        return result;
+    }
+
     public async Task<List<Algorithm>> GetAllAlgorithms()
     {
         return await _repo.GetAllAlgorithms();
