@@ -29,6 +29,9 @@ namespace AlgoRythmicsAPI
         {
 
             services.AddControllers();
+
+            services.AddCors();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AlgoRythmicsAPI", Version = "v1" });
@@ -48,6 +51,7 @@ namespace AlgoRythmicsAPI
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AlgoRythmicsAPI v1"));
+                app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             }
 
             AppDbInitializer.Seed(app);

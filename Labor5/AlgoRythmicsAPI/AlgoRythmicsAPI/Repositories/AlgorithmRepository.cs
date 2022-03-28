@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -37,7 +38,7 @@ public class AlgorithmRepository : IAlgorithmRepository
         return await _context.Algorithms.FindAsync(id);
     }
 
-    public async Task<List<Algorithm>> GetAllAlgorithms()
+    public async Task<ActionResult<IEnumerable<Algorithm>>> GetAllAlgorithms()
     {
         Algorithm algorithm = new Algorithm();
         var result = await _context.Algorithms.ToListAsync();

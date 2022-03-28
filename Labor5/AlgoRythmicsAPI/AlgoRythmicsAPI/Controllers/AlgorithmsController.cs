@@ -27,27 +27,29 @@ namespace AlgoRythmicsAPI.Controllers
         }
 
 
-        [HttpGet("get-alborithm-by-id/{algorithmId}")]
-        public async Task<IActionResult> GetSpecificAlgorithm(int algorithmId)
+        [HttpGet("get-algorithm-by-id/{algorithmId}")]
+        public async Task<ActionResult<Algorithm>> GetSpecificAlgorithm(int algorithmId)
         {
             var result = await _service.GetSpecificAlgorithm(algorithmId);
 
             if (result != null)
             {
-                return Ok(result);
+                //return Ok(result);
+                return result;
             }
 
             return NotFound();
         }
 
         [HttpGet("get-all-algorithms")]
-        public async Task<IActionResult> GetAllAlgorithms()
+        public async Task<ActionResult<IEnumerable<Algorithm>>> GetAllAlgorithms()
         {
             var result = await _service.GetAllAlgorithms();
 
             if(result != null)
             {
-                return Ok(result);
+                //return Ok(result);
+                return result;
             }
 
             return NoContent();

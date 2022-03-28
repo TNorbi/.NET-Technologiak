@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
@@ -28,7 +29,7 @@ public class AlgorithmService : IAlgorithmService
         return result;
     }
 
-    public async Task<List<Algorithm>> GetAllAlgorithms()
+    public async Task<ActionResult<IEnumerable<Algorithm>>> GetAllAlgorithms()
     {
         return await _repo.GetAllAlgorithms();
     }
